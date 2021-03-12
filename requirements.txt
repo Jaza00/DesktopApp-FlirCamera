@@ -1,0 +1,5 @@
+numpy==1.20.1
+opencv-python==4.5.1.48
+PySide2==5.15.2
+shiboken2==5.15.2
+simple-pyspin==0.1.1
