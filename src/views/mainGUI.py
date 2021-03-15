@@ -6,21 +6,33 @@ import os
 
 class FlirCameraWidget(QtWidgets.QWidget):
     """
-    Main QTWidget for intrinsic acquisition
+    Main QTWidget para la adquisicion de la cámara FLIR
     """    
 
     def __init__(self, *args, **kwargs):
+        """
+        Inicializa la clase FlirCameraWidget
+        """
+
         super(FlirCameraWidget, self).__init__(*args, **kwargs)
         self.loadForm()
         self.initUI()
         Styles(self)
 
     def initUI(self):
+        """
+        Setea los valores iniciales de la GUI
+        """
+
         self.setWindowIcon(QtGui.QIcon('views/icons/cameraIcon.png'))
         self.setWindowTitle("Intecol Flir camera")
         self.setGeometry(300, 100, 1012, 622)
 
     def loadForm(self):
+        """
+        Carga el archivo .ui de la GUI
+        """
+
         formUI = os.path.join(sys.path[0], 'views/acquisition.ui')
         file = QtCore.QFile(formUI)
         file.open(QtCore.QFile.ReadOnly)
@@ -29,9 +41,3 @@ class FlirCameraWidget(QtWidgets.QWidget):
         layout = QtWidgets.QVBoxLayout()
         layout.addWidget(self.window)
         self.setLayout(layout)
-
-if __name__ == "__main__":
-    app = QtWidgets.QApplication([])
-    acquisitionIntrinsicCalibration = FlirCameraWidget()
-    acquisitionIntrinsicCalibration.show()
-    app.exec_()

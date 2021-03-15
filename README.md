@@ -2,7 +2,7 @@
 <div align="center">
     <img src="images\imagenIntecol.PNG"><img>
 </div>
-<h1 align="center">DesktopApp para la adquisición de imágenes de la cámara FLIR</h1>
+<h1 align="center">App de escritorio para la adquisición de imágenes de la cámara FLIR</h1>
 
 <p>
     <b>Realizado por:</b> Ing. Jaimen Aza
@@ -10,13 +10,13 @@
 
 <h2>Correr la aplicación</h2>
 
-<h3>Configurar el entorno de variable</h3>
+<h3>Configurar el entorno virtual</h3>
 
 <p>
-    Trabajaremos sobre un entorno virutal de python3.8 para no tener problemas con las dependecias. Para esto crearemos el entorno y luego instalaremos las librerias que se encuentran en el archivo requirements.txt
+    Trabajaremos sobre un entorno virtual de python3.8 para no tener problemas con las dependecias. Para esto crearemos el entorno y luego instalaremos las librerias que se encuentran en el archivo requirements.txt
 </p>
 
-<h3>Creando el entorno virutal </h3>
+<h3>Creando el entorno virtual </h3>
 
 <p>Para crear el entorno virtual ejecutar la siguiente linea</p>
 
@@ -36,13 +36,13 @@
 <p>El entorno virtual creado anteriormente es OPCIONAL, sin embargo se recomienda usarlo para tener cada proyecto con sus respctivas librerias. Si no se desea trabajar en el entorno virtual, omitir los pasos anteriores</p>
 
 <h3>Descargar repositorio</h3>
-<p>Si se trabajó con entorno virutal el repositorio debe ser clonado dentro de este.</p>
+<p>Si se trabajó con entorno virtual el repositorio debe ser clonado dentro de este.</p>
 
 ```
     git clone https://github.com/Jaza00/DesktopApp-FlirCamera.git
 ```
 
-<h3>Instalar dependecias</h3>
+<h3>Instalar dependencias</h3>
 <p>primero se debe instalar el whl de PySpin que se encuentra adjunto mediante el comando:</p>
 
 ```

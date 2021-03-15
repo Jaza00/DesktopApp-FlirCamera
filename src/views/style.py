@@ -3,9 +3,18 @@ relativePathIcons = 'views/icons/'
 
 class Styles():
     """
-    Set style and icons to widget
+    Estilo e iconos para la GUI
     """    
+
     def __init__(self, widget):
+        """
+        Inicializa la clase Styles
+
+        parameter:
+
+            widget: QTWidget de la GUI
+        """
+
         super(Styles).__init__()
         self.widgetAcq = widget
         self.setTheme()
@@ -14,8 +23,9 @@ class Styles():
 
     def setTheme(self):
         """ 
-        set color high constrast 
+        Setea el color del tema para la GUI
         """
+
         self.primaryColor = '#f44333'
         self.secondaryColor = '#ffffff'
         self.buttons = '#ffffff'
@@ -26,6 +36,10 @@ class Styles():
         self.lineEdit = '#263238'
 
     def setIcons(self):
+        """
+        Setea los iconos en cada botón de la GUI
+        """
+
         intecolLogo = QtGui.QPixmap.fromImage(
             relativePathIcons+'logoflir.PNG')
         self.widgetAcq.window.labelLogoFlir.setPixmap(intecolLogo)
@@ -62,110 +76,78 @@ class Styles():
         self.widgetAcq.window.pushButtonStop.setToolTip('stop stream camera')
 
     def formStyle(self):
+        """
+        Plantila principal de estilos
+        """
+
         styleWindow = """
             QWidget{
-                    background: """ + self.secondaryColor + """;
-                    color:  """ + self.primaryText + """;
-                    border: none;
-                    font: Ubuntu;
-                    font-size: 12pt;
-                }
-                QTabWidget::tab-bar{
-                    alignment: right;
-                }
-                QTabBar{
-                    background: """ + self.primaryColor + """;
-                }
-                QTabBar::tab {
-                    background: """ + self.primaryColor + """;
-                    min-width: 10px;
-                    margin: 5px;
-                    margin-bottom: 10px;
-                }
-                QTabBar::tab:hover {
-                    color: """ + self.secondaryColor + """;
-                }            
-                QTabBar::tab:selected {
-                    background: """ + self.primaryColor + """;
-                    Color: """ + self.primaryText + """;
-                }
-                QTabBar::tab:!selected {
-                    Color: """ + self.frameCamera + """;
-                }
-                QTabBar::tab:!selected:hover {
-                    Color: """ + self.primaryText + """;
-                }
-                QPushButton{
-                    Background: """ + self.buttons + """;
-                    Background: """ + self.buttons + """;
-                    color: """ + self.secondaryColor + """;
-                    min-height: 40px;
-                    border-radius: 2px;
-                }       
-                QPushButton:pressed {
-                    background-color: rgb(224, 0, 0);
-                    border-style: inset;
-                } 
-                QPushButton:hover {
-                    background-color: """+self.primaryColor+""";
-                    border-style: inset;
-                } 
-                QComboBox {
-                    Background: """ + self.primaryText + """;
-                    color: """ + self.lineEdit + """;
-                    min-height: 25px;
-                }   
-                QComboBox:!selected {
-                    Background: """ + self.primaryText + """;
-                    color: """ + self.lineEdit + """;
-                }   
-                QComboBox:!on {
-                    Background: """ + self.primaryText + """;
-                    color: """ + self.lineEdit + """;
-                } 
-                QLineEdit { 
-                    Background: """ + self.primaryText + """;    
-                    color:  """ + self.lineEdit + """;
-                    border: 1px solid """ + self.secondaryText + """;    
-                    text-align: center;
-                } 
-                QLabel {
-                    color: """+self.secondaryText + """;
-                    font-size: 11pt;
-                }
-                QProgressBar {
-                    color: """+self.secondaryText + """;
-                    background: """+self.secondaryColor+""";
-                    border: none;
-                }
-                QProgressBar::chunk {
-                    color: """+self.progressBar+""";
-                    background: """+self.progressBar+""";
-                    border: none;
-                }                
-            """
-        self.widgetAcq.setStyleSheet(styleWindow)
-
-        styleHeader = """
-            padding-left: 5px;
-            background: """ + self.secondaryColor + """;
-            font: bold, Ubuntu sans-serif;
-            font-size: 13pt;
-            color: """ + self.frameCamera + """;
-            min-width:200px;
-            padding-bottom: 0;
+                background: """ + self.secondaryColor + """;
+                color:  """ + self.primaryText + """;
+                border: none;
+                font: Ubuntu;
+                font-size: 12pt;
+            }
+            QPushButton{
+                Background: """ + self.buttons + """;
+                Background: """ + self.buttons + """;
+                color: """ + self.secondaryColor + """;
+                min-height: 40px;
+                border-radius: 2px;
+            }       
+            QPushButton:pressed {
+                background-color: rgb(224, 0, 0);
+                border-style: inset;
+            } 
+            QPushButton:hover {
+                background-color: """+self.primaryColor+""";
+                border-style: inset;
+            } 
+            QComboBox {
+                Background: """ + self.primaryText + """;
+                color: """ + self.lineEdit + """;
+                min-height: 25px;
+            }   
+            QComboBox:!selected {
+                Background: """ + self.primaryText + """;
+                color: """ + self.lineEdit + """;
+            }   
+            QComboBox:!on {
+                Background: """ + self.primaryText + """;
+                color: """ + self.lineEdit + """;
+            } 
+            QLineEdit { 
+                Background: """ + self.primaryText + """;    
+                color:  """ + self.lineEdit + """;
+                border: 1px solid """ + self.secondaryText + """;    
+                text-align: center;
+            } 
+            QLabel {
+                color: """+self.secondaryText + """;
+                font-size: 11pt;
+            }
+            QProgressBar {
+                color: """+self.secondaryText + """;
+                background: """+self.secondaryColor+""";
+                border: none;
+            }
+            QProgressBar::chunk {
+                color: """+self.progressBar+""";
+                background: """+self.progressBar+""";
+                border: none;
+            }                
         """
-        self.widgetAcq.window.labelLogo.setStyleSheet(styleHeader)
+        self.widgetAcq.setStyleSheet(styleWindow)
 
         styleFrameCamera = """
             background: """ + self.frameCamera + """;
         """
         self.widgetAcq.window.frameDisplayImage.setStyleSheet(styleFrameCamera)
 
-        #styleLabelNoImage = """
-        #    background: """ + self.secondaryColor + """;
-        #    color: """ + self.frameCamera + """;
-        #    font: bold, Ubuntu sans-serif;
-        #    font-size: 14pt;
-        #"""
-        #self.widgetAcq.window.labelNoImage.setStyleSheet(styleLabelNoImage)
+        styleLabelNoImage = """
+            background: """ + self.secondaryColor + """;
+            color: """ + self.frameCamera + """;
+            font: bold, Ubuntu sans-serif;
+            font-size: 12pt;
+        """
+        self.widgetAcq.window.labelImagesCapt.setStyleSheet(styleLabelNoImage)

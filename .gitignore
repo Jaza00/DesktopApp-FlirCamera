@@ -1,5 +1,7 @@
 Scripts
 Lib
 Include
+__pycache__
+*pyc
 .vscode
 pyvenv.cfg
