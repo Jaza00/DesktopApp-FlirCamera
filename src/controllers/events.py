@@ -1,4 +1,4 @@
-from src.acquisition.acquisition import  Acquisition
+from acquisition import  Acquisition
 from PySide2 import QtGui, QtWidgets, QtCore
 import numpy as np
 import cv2
@@ -19,13 +19,14 @@ class Events():
         """
 
         self.window = mainWidget.window
-        self.scalaImage = 80
+        self.camera = Acquisition()
+        self.scalaImage = 50
         self.clicPlay = False
         self.clicCapture = False
         self.acquisitionImages = False
         self.countNoImageAcq = 0
-        self.dimensionsCamera = np.array([960, 600])*(self.scalaImage/100)
-        self.camera = Acquisition()
+        width, height = self.getDimensionImage()
+        self.dimensionsCamera = np.array([width, height])*(self.scalaImage/100)
 
     def setFrameRate(self, valueFrameRate):
         """
@@ -92,7 +93,7 @@ class Events():
         Inicializa el stream
         """
 
-        self.camera.initCamera()
+        #self.camera.initCamera()
         self.timerCamera = QtCore.QTimer()
         print("frame rate:", (1/self.frameRate)*1000)
         self.timerCamera.setInterval((1/self.frameRate)*1000)
@@ -104,6 +105,16 @@ class Events():
         self.imagePixmapItem = scene.addPixmap(self.imagePixmap)
         self.viewCamera.setScene(scene)
         self.clicPlay = True
+
+    def getDimensionImage(self):
+        """
+        Retorna las dimenciones de la imagen
+        """
+
+        self.camera.initCamera()
+        dim = self.camera.getRgbImage().shape
+        height, width = dim[0], dim[1]
+        return width, height
 
     def getFrame(self):
         """

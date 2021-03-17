@@ -1,4 +1,4 @@
-from src.controllers.events import Events
+from events import Events
 from PySide2 import QtWidgets
 
 class Controller():

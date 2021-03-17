@@ -14,10 +14,21 @@ class Acquisition():
         Detecta e inicializa la cámara
         """
 
+        print('init Camera...')
         self.cam = Camera()
-        self.cam.PixelFormat = "RGB8"
-        print(self.cam.PixelFormat)
         self.cam.init()  
+        self.configCamera()
+
+    def configCamera(self):
+        """
+        Configura algunos parametros de la cámara
+        """
+
+        print('config camera...')
+        self.cam.Width = self.cam.SensorWidth # 1440
+        self.cam.Height = self.cam.SensorHeight # 900
+        self.cam.PixelFormat = "RGB8"   
+        print(self.cam.PixelFormat)
 
     def getRgbImage(self):
         """
