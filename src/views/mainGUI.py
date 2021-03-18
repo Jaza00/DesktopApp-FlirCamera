@@ -1,10 +1,11 @@
 from PySide2 import QtCore, QtUiTools, QtWidgets, QtGui
-from style import Styles
+from views.acqGUI import Ui_MainWindow
+from views.style import Styles
 import cv2
 import sys
 import os
 
-class FlirCameraWidget(QtWidgets.QWidget):
+class FlirCameraWidget(QtWidgets.QMainWindow):
     """
     Main QTWidget para la adquisicion de la cámara FLIR
     """    
@@ -15,7 +16,10 @@ class FlirCameraWidget(QtWidgets.QWidget):
         """
 
         super(FlirCameraWidget, self).__init__(*args, **kwargs)
-        self.loadForm()
+        #self.loadForm()
+        self.window = Ui_MainWindow()
+        self.window.setupUi(self)
+
         self.initUI()
         Styles(self)
 

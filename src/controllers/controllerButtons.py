@@ -1,4 +1,4 @@
-from events import Events
+from controllers.events import Events
 from PySide2 import QtWidgets
 
 class Controller():
@@ -109,7 +109,7 @@ class Controller():
 
         relativePath = '../data'
         nameImage = QtWidgets.QFileDialog.getSaveFileName(
-            self.window, 'Save as', relativePath)
+            self.window.frameDisplayImage, 'Save as', relativePath)
         nameImage = "%s.png" % nameImage[0]
         return nameImage
 

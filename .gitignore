@@ -5,3 +5,6 @@ __pycache__
 *pyc
 .vscode
 pyvenv.cfg
+build
+dist
+app.specs

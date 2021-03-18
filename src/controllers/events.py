@@ -1,4 +1,4 @@
-from acquisition import  Acquisition
+from acquisition.acquisition import  Acquisition
 from PySide2 import QtGui, QtWidgets, QtCore
 import numpy as np
 import cv2
@@ -25,8 +25,6 @@ class Events():
         self.clicCapture = False
         self.acquisitionImages = False
         self.countNoImageAcq = 0
-        width, height = self.getDimensionImage()
-        self.dimensionsCamera = np.array([width, height])*(self.scalaImage/100)
 
     def setFrameRate(self, valueFrameRate):
         """
@@ -71,6 +69,8 @@ class Events():
         """
 
         print('start stream')
+        width, height = self.getDimensionImage()
+        self.dimensionsCamera = np.array([width, height])*(self.scalaImage/100)
         self.initCamera()
         self.initCounter()  
         return self.viewCamera
