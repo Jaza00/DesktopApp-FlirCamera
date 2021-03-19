@@ -25,8 +25,8 @@ class Acquisition():
         """
 
         print('config camera...')
-        self.cam.Width = self.cam.SensorWidth # 1440
-        self.cam.Height = self.cam.SensorHeight # 900
+        self.cam.Width = self.cam.SensorWidth//2 # 1440
+        self.cam.Height = self.cam.SensorHeight//2 # 900
         self.cam.PixelFormat = "RGB8"   
         print(self.cam.PixelFormat)
 

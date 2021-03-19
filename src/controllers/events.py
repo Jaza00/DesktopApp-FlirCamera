@@ -1,8 +1,10 @@
 from acquisition.acquisition import  Acquisition
 from PySide2 import QtGui, QtWidgets, QtCore
+from processing.ocr import Ocr
 import numpy as np
-import cv2
 import time
+import cv2
+
 
 class Events():
     """
@@ -20,7 +22,8 @@ class Events():
 
         self.window = mainWidget.window
         self.camera = Acquisition()
-        self.scalaImage = 50
+        self.ocr = Ocr()
+        self.scalaImage = 80
         self.clicPlay = False
         self.clicCapture = False
         self.acquisitionImages = False
@@ -122,6 +125,8 @@ class Events():
         """
 
         frame = self.camera.getRgbImage()
+        frame, dictionary = self.ocr.OCR(frame, 'word')
+        
         if self.acquisitionImages:
             if self.countNoImageAcq < self.NoImagesAcq:
                 nameImage = "%s%i%s" % (self.pathImages, self.countNoImageAcq, '.png')
