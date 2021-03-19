@@ -27,8 +27,7 @@ class FlirCameraWidget(QtWidgets.QMainWindow):
         """
         Setea los valores iniciales de la GUI
         """
-
-        self.setWindowIcon(QtGui.QIcon('views/icons/cameraIcon.png'))
+        
         self.setWindowTitle("Intecol Flir camera")
         self.setGeometry(300, 100, 1012, 622)
 

@@ -1,5 +1,5 @@
 from PySide2 import QtGui, QtCore
-relativePathIcons = 'views/icons/'
+relativePathIcons = 'icons/'
 
 class Styles():
     """

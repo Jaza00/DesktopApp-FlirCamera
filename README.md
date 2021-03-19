@@ -71,7 +71,7 @@
 <p>Crear .exe</p>
 
 ```
-pyinstaller --hidden-import PySide2.QtXml example.py
+pyinstaller --hidden-import PySide2.QtXml app.py
 
 pyinstaller --onefile --windowed --hidden-import PySide2.QtXml app.py
 

@@ -5,7 +5,7 @@ author: Jaimen Aza
 email: jaza@intecol.com.co
 """
 
-from PySide2 import QtWidgets
+from PySide2 import QtWidgets, QtGui
 import sys
 import os
 
@@ -32,6 +32,7 @@ Correr la aplicación
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication([])
+    app.setWindowIcon(QtGui.QIcon('icons/cameraICO.ico'))
     flirCameraWidget = FlirCameraWidget()
     controller = Controller(flirCameraWidget)
     app.exec_()
