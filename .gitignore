@@ -7,4 +7,3 @@ __pycache__
 pyvenv.cfg
 build
 dist
-app.specs

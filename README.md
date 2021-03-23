@@ -76,3 +76,13 @@ pyinstaller --hidden-import PySide2.QtXml app.py
 pyinstaller --onefile --windowed --hidden-import PySide2.QtXml app.py
 
 ```
+
+<h2>Más información</h2>
+
+<a href="https://klecknerlab.github.io/simple_pyspin/cameras/Point_Grey_Research_Chameleon3_CM3-U3-13Y3M.html">simple_pyspin</a>
+<br>
+<a href="https://www.restarcc.com/dcms_media/other/BlackFly_U3.pdf">Point Grey Blackfly pdf</a>
+<br>
+<a href="http://justinblaber.org/acquiring-stereo-images-with-spinnaker-api-hardware-trigger/">Ejemplos pyspin</a>
+<br>
+<a href="https://www.learnpyqt.com/tutorials/packaging-pyqt5-pyside2-applications-windows-pyinstaller/">crear instalador</a>
